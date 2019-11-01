@@ -1,5 +1,6 @@
 const production = process.env.NODE_ENV === 'production';
-const hostUrl = '/batman-list';
+// const hostUrl = '/batman-list';
+const hostUrl = '';
 
 module.exports = {
   exportPathMap: function() {
