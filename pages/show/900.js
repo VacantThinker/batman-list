@@ -1,4 +1,5 @@
 import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
 
 const Post900 = () => (
@@ -11,7 +12,7 @@ const Post900 = () => (
       himself outside city limits, facing situations that are both unfamiliar and exhilarating. With formidable foes
       around every corner, Batman will still rely on his stealth, resourcefulness and limitless supply of cool gadgets
       to bring justice home.</p>
-    <img alt='' src='/static/900.jpg'/>
+    <PrefixedImg alt='' src='/static/900.jpg'/>
   </WrapLayout>
 )
 

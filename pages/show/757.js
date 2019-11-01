@@ -1,4 +1,5 @@
 import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
 
 const Post757 = () => (
@@ -9,7 +10,7 @@ const Post757 = () => (
       primitive Killer Croc in a fresh take on super hero storytelling. Intelligent, dramatic stories, unique characters
       and sharp dialog shaped this edgy TV series into an Emmy®-winning powerhouse that brought the Caped Crusader out
       of the dark alleys of TV history and into the present for fans of all ages.</p>
-    <img alt='' src='/static/757.jpg'/>
+    <PrefixedImg alt='' src='/static/757.jpg'/>
   </WrapLayout>
 )
 

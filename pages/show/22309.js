@@ -1,4 +1,5 @@
 import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
 
 const Post22309 = () => (
@@ -7,7 +8,7 @@ const Post22309 = () => (
     <p>This collection includes animated adaptations of ten short stories, bundled into five episodes, that take place
       in and around Gotham City, featuring Batman and his nefarious villains. Each story comes from the unique
       perspective of different writers and artists, applying their spin on the Batman universe.</p>
-    <img alt='' src='/static/22309.jpg'/>
+    <PrefixedImg alt='' src='/static/22309.jpg'/>
   </WrapLayout>
 )
 

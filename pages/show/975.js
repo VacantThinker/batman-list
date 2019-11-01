@@ -1,4 +1,5 @@
 import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
 
 const Post975 = () => (
@@ -9,7 +10,7 @@ const Post975 = () => (
       often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile,
       Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master
       criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.</p>
-    <img alt='' src='/static/975.jpg'/>
+    <PrefixedImg alt='' src='/static/975.jpg'/>
   </WrapLayout>
 )
 

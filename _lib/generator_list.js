@@ -2,6 +2,10 @@ const fs = require('fs')
 const path = require('path')
 const axios = require('axios').default
 
+const production = process.env.NODE_ENV === 'production'
+const hostUrl = '/batman-list'
+// const hostUrl = '';
+
 
 const filePath = path.join(__dirname, '../_data/batman.json')
 const fileSync = fs.readFileSync(filePath, 'utf8')
@@ -51,13 +55,14 @@ function g_showdir_idjs() {
 
     const templatePost = `
 import WrapLayout from "../../components/WrapLayout";
+import PrefixedImg from "../../components/PrefixedImg";
 import React from "react";
 
 const Post${val.id} = () => (
   <WrapLayout>
     <h1>${val.name}</h1>
     ${val.summary}
-    <img alt='' src='${htmlImgUrl}' />
+    <PrefixedImg alt='' src='${htmlImgUrl}' />
   </WrapLayout>
 )
 
@@ -99,5 +104,5 @@ function g_showdir_idjs_image() {
 
 // g_indexjs_ul_li()
 // g_nextconfigjs_pathmap_showid()
-// g_showdir_idjs()
-g_showdir_idjs_image()
+g_showdir_idjs()
+// g_showdir_idjs_image()

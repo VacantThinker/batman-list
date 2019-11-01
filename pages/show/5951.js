@@ -1,4 +1,5 @@
 import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
 
 const Post5951 = () => (
@@ -8,7 +9,7 @@ const Post5951 = () => (
       Fox had not lived up to the contract that they had given Batman, so the WB decided to give the show another
       chance. Bruce Timm then went back and decided to re-design all of the characters from Batman and ended up
       revamping the series all-together.</p>
-    <img alt='' src='/static/5951.jpg'/>
+    <PrefixedImg alt='' src='/static/5951.jpg'/>
   </WrapLayout>
 )
 

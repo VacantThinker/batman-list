@@ -95,4 +95,23 @@ export default PrefixedLink
 ```
 
 ---
+
+ - 部署到github page, 图像加载问题
+    
+    - 缺少, /batmant-list/. https://vacantthinker.github.io/static/481.jpg
+
+PrefixedImg.js
+```javascript
+import React from 'react'
+
+const PrefixedImg = ({ alt = '', src}) => (
+  <img alt={`${alt}`} src={`${process.env.linkPrefix}${src}`} />
+)
+
+export default PrefixedImg
+
+
+```
+
+---
 end

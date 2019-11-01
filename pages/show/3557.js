@@ -1,4 +1,5 @@
 import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
 
 const Post3557 = () => (
@@ -8,7 +9,7 @@ const Post3557 = () => (
       his butler and former SAS operative Alfred Pennyworth, Bruce takes on the guise of Batman and fights the villains
       of Gotham City. Helping him is Katana, a young martial artist who Alfred hires to assist Bruce when he realizes
       that he's too old to serve in the field.</p>
-    <img alt='' src='/static/3557.jpg'/>
+    <PrefixedImg alt='' src='/static/3557.jpg'/>
   </WrapLayout>
 )
 

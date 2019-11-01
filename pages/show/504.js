@@ -1,4 +1,5 @@
 import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
 
 const Post504 = () => (
@@ -11,7 +12,7 @@ const Post504 = () => (
       matters into his own hands! Vowing to avenge his father's death, Terry dons the high-tech suit - tricked out with
       jetpacks for flying, a supersensitive microphone for eavesdropping and even camouflage capabilities - in search of
       his father's assassin.</p>
-    <img alt='' src='/static/504.jpg'/>
+    <PrefixedImg alt='' src='/static/504.jpg'/>
   </WrapLayout>
 )
 
