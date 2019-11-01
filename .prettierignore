@@ -1,2 +1,7 @@
 **/node_modules
 **/.next
+**/out
+**/yarn.lock
+**/_data
+**/_lib
+**/_temp

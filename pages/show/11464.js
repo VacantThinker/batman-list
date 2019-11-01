@@ -6,7 +6,7 @@ const Post11464 = () => (
   <WrapLayout>
     <h1>Batman Unlimited</h1>
     <p>A webseries began airing on DC Kids' YouTube channel on May 4, 2015.</p>
-    <PrefixedImg alt='' src='/static/11464.jpg'/>
+    <PrefixedImg alt="" src={`/static/11464.jpg`} />
   </WrapLayout>
 )
 
