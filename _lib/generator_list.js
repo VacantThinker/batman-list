@@ -3,11 +3,11 @@ const path = require('path')
 
 const filePath = path.join(__dirname, '../_data/batman.json')
 const fileSync = fs.readFileSync(filePath, 'utf8')
-const dataObj = JSON.parse(fileSync)
+const jsonObj = JSON.parse(fileSync)
 
-const shows = dataObj.map(x => x.show)
+const shows = jsonObj.map(x => x.show)
 
-function g_index_ul_li() {
+function g_indexjs_ul_li() {
   let strToFile = ''
   shows.forEach((val) => {
     const dirName = '/show/'
@@ -22,7 +22,7 @@ function g_index_ul_li() {
     strToFile = strToFile + templateLi
   })
   // console.log(strToFile)
-  fs.writeFileSync(path.join(__dirname, '../_temp/li-list'), strToFile, 'utf8')
+  fs.writeFileSync(path.join(__dirname, '../_temp/indexjs_ul_li'), strToFile, 'utf8')
 }
 
 function g_nextconfigjs_pathmap_showid() {
@@ -37,7 +37,7 @@ function g_nextconfigjs_pathmap_showid() {
     strToFile = strToFile + templateLi
   })
   // console.log(strToFile)
-  fs.writeFileSync(path.join(__dirname, '../_temp/path-list'), strToFile, 'utf8')
+  fs.writeFileSync(path.join(__dirname, '../_temp/nextconfigjs_pathmap_showid'), strToFile, 'utf8')
 }
 
 function g_showdir_idjs() {
@@ -67,6 +67,6 @@ export default Post${val.id};
 }
 
 
-g_index_ul_li()
-g_showdir_idjs()
+g_indexjs_ul_li()
 g_nextconfigjs_pathmap_showid()
+// g_showdir_idjs()
