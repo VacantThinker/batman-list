@@ -1,11 +1,10 @@
-import Layout from "../components/Layout";
-import React from "react";
+import WrapLayout from '../components/WrapLayout';
+import React from 'react';
 
 export default function About() {
-
   return (
-    <Layout>
+    <WrapLayout>
       <div>about page</div>
-    </Layout>
-  )
+    </WrapLayout>
+  );
 }

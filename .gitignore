@@ -6,4 +6,5 @@
 /.next/
 /out/
 
-_temp
+!_temp
+/_temp/*

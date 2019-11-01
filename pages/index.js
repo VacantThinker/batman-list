@@ -1,66 +1,65 @@
-import React from 'react'
-import Layout from "../components/Layout";
-import Link from "../components/Link";
+import React from 'react';
+import WrapLayout from '../components/WrapLayout';
+import PrefixedLink from '../components/PrefixedLink';
 
 const Index = () => {
-
   return (
-    <Layout>
+    <WrapLayout>
       <h1>batman list</h1>
       <ul>
-        <li key={`975`}>
-          <Link href={`/show/975`} as={`/show/975`}>
+        <li key="975">
+          <PrefixedLink href="/show/975">
             <a>Batman</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`481`}>
-          <Link href={`/show/481`} as={`/show/481`}>
+        <li key="481">
+          <PrefixedLink href="/show/481">
             <a>The Batman</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`504`}>
-          <Link href={`/show/504`} as={`/show/504`}>
+        <li key="504">
+          <PrefixedLink href="/show/504">
             <a>Batman Beyond</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`757`}>
-          <Link href={`/show/757`} as={`/show/757`}>
+        <li key="757">
+          <PrefixedLink href="/show/757">
             <a>Batman: The Animated Series</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`3557`}>
-          <Link href={`/show/3557`} as={`/show/3557`}>
+        <li key="3557">
+          <PrefixedLink href="/show/3557">
             <a>Beware the Batman</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`11464`}>
-          <Link href={`/show/11464`} as={`/show/11464`}>
+        <li key="11464">
+          <PrefixedLink href="/show/11464">
             <a>Batman Unlimited</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`900`}>
-          <Link href={`/show/900`} as={`/show/900`}>
+        <li key="900">
+          <PrefixedLink href="/show/900">
             <a>Batman: The Brave and the Bold</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`22309`}>
-          <Link href={`/show/22309`} as={`/show/22309`}>
+        <li key="22309">
+          <PrefixedLink href="/show/22309">
             <a>Batman: Black and White</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`5951`}>
-          <Link href={`/show/5951`} as={`/show/5951`}>
+        <li key="5951">
+          <PrefixedLink href="/show/5951">
             <a>The New Batman Adventures</a>
-          </Link>
+          </PrefixedLink>
         </li>
-        <li key={`33618`}>
-          <Link href={`/show/33618`} as={`/show/33618`}>
+        <li key="33618">
+          <PrefixedLink href="/show/33618">
             <a>The Adventures of Batman</a>
-          </Link>
+          </PrefixedLink>
         </li>
       </ul>
-    </Layout>
-  )
-}
+    </WrapLayout>
+  );
+};
 
 export default Index;

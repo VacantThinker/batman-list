@@ -8,11 +8,11 @@ const dataObj = JSON.parse(fileSync)
 const shows = dataObj.map(x => x.show);
 
 function sayLi() {
-  let strToFile = ``;
+  let strToFile = '';
   shows.forEach((val, index) => {
     const dirName = '/show/'
-    const templateLi = `  <li key={\`${val.id}\`}>
-        <Link href={\`${dirName}${val.id}\`} as={\`${dirName}${val.id}\`}>
+    const templateLi = `  <li key='${val.id}'>
+        <Link href='${dirName}${val.id}'>
           <a>${val.name}</a>
         </Link>
       </li>
@@ -25,7 +25,7 @@ function sayLi() {
 }
 
 function sayPathMap() {
-  let strToFile = ``;
+  let strToFile = '';
   shows.forEach((val, index) => {
     const dirName = '/show/'
     const page1 = `${dirName}${val.id}`
@@ -49,14 +49,14 @@ function sayShowPostList() {
           <Layout>
             <h1>${val.name}</h1>
             ${val.summary}
-            <img src={\`${val.image.medium}\`}/>
+            <img alt='' src='${val.image.medium}' />
           </Layout>
         )
         
         export default Post${val.id};
         `
 
-    console.log(templatePost)
+    // console.log(templatePost)
     fs.writeFileSync(path.join(__dirname, `../pages/show/${id}.js`), templatePost, 'utf8')
 
   })
@@ -64,6 +64,6 @@ function sayShowPostList() {
 }
 
 
-// sayLi();
+sayLi();
 sayShowPostList();
 // sayPathMap();
