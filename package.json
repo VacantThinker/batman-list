@@ -1,0 +1,20 @@
+{
+  "name": "batman-list",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "rmdir /q /s .next && next build && next export ",
+    "deploy": "yarn run export && type nul > out/.nojekyll",
+    "start": "next start"
+  },
+  "dependencies": {
+    "gh-pages": "^2.1.1",
+    "next": "9.1.2",
+    "raw-loader": "^3.1.0",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-markdown": "^4.2.2"
+  }
+}
