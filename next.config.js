@@ -2,7 +2,7 @@ const production = process.env.NODE_ENV === 'production';
 const hostUrl = '/batman-list';
 
 module.exports = {
-  exportsPathMap: function() {
+  exportPathMap: function() {
     return {
       '/': { page: '/' },
       '/about': { page: '/about' },
