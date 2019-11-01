@@ -1,5 +1,7 @@
 const fs = require('fs')
 const path = require('path')
+const axios = require('axios').default
+
 
 const filePath = path.join(__dirname, '../_data/batman.json')
 const fileSync = fs.readFileSync(filePath, 'utf8')
@@ -43,19 +45,20 @@ function g_nextconfigjs_pathmap_showid() {
 }
 
 function g_showdir_idjs() {
-  shows.forEach((val) => {
+  shows.forEach(val => {
     const id = val.id
+    const htmlImgUrl = `/static/${id}.jpg`
 
     const templatePost = `
-import Layout from "../../components/Layout";
+import WrapLayout from "../../components/WrapLayout";
 import React from "react";
 
 const Post${val.id} = () => (
-  <Layout>
+  <WrapLayout>
     <h1>${val.name}</h1>
     ${val.summary}
-    <img alt='' src='${val.image.medium}' />
-  </Layout>
+    <img alt='' src='${htmlImgUrl}' />
+  </WrapLayout>
 )
 
 export default Post${val.id};
@@ -65,10 +68,36 @@ export default Post${val.id};
     fs.writeFileSync(path.join(__dirname, `../pages/show/${id}.js`), templatePost, 'utf8')
 
   })
-
+  console.log(`g_showdir_idjs end ---`)
 }
 
+function g_showdir_idjs_image() {
+  shows.map(val => {
 
-g_indexjs_ul_li()
-g_nextconfigjs_pathmap_showid()
+    // get image file
+    const imgId = val.id
+    const imgUrl = val.image.medium
+
+    // GET request for remote image
+    axios({
+      method: 'get',
+      url: imgUrl,
+      responseType: 'stream'
+    })
+      .then(function(response) {
+        const filePath = path.join(__dirname, `../public/static/${imgId}.jpg`)
+        fs.writeFileSync(filePath, null, { encoding: 'utf8' })
+        response.data.pipe(fs.createWriteStream(filePath))
+        console.log(`${filePath} --- `)
+        // fs.writeFile(filePath, null, err => {
+        //   response.data.pipe(fs.createWriteStream(filePath))
+        //   console.log(`${filePath} --- `)
+        // })
+      })
+  })
+}
+
+// g_indexjs_ul_li()
+// g_nextconfigjs_pathmap_showid()
 // g_showdir_idjs()
+g_showdir_idjs_image()
