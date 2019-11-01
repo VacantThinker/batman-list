@@ -16,27 +16,3 @@ export default function WrapLayout(props) {
   )
 }
 
-{/*<style jsx>{`*/
-}
-{/*        .wrapper {*/
-}
-{/*          margin: 15px;*/
-}
-{/*          padding: 15px;*/
-}
-{/*          border: 1px solid #ccc;*/
-}
-{/*        }*/
-}
-{/*        .children {*/
-}
-{/*          margin: 15px;*/
-}
-{/*          padding: 15px;*/
-}
-{/*          border: 1px solid #ccc;*/
-}
-{/*        }*/
-}
-{/*      `}</style>*/
-}

@@ -19,16 +19,3 @@ const NavHead = () => {
 }
 
 export default NavHead
-
-{/*<style jsx>{`*/
-}
-{/*        a {*/
-}
-{/*          margin-left: 5px;*/
-}
-{/*          margin-right: 10px;*/
-}
-{/*        }*/
-}
-{/*      `}</style>*/
-}

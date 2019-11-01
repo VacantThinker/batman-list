@@ -13,16 +13,18 @@ function g_indexjs_ul_li() {
     const dirName = '/show/'
     const templateLi = `
 <li key='${val.id}'>
-  <Link href='${dirName}${val.id}'>
+  <PrefixedLink href='${dirName}${val.id}'>
     <a>${val.name}</a>
-  </Link>
+  </PrefixedLink>
 </li>
     `
     // console.log(templateLi)
     strToFile = strToFile + templateLi
   })
   // console.log(strToFile)
-  fs.writeFileSync(path.join(__dirname, '../_temp/indexjs_ul_li'), strToFile, 'utf8')
+  fs.writeFileSync(path.join(__dirname, '../_temp/indexjs_ul_li'),
+    strToFile,
+    'utf8')
 }
 
 function g_nextconfigjs_pathmap_showid() {
