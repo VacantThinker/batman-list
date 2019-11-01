@@ -20,7 +20,7 @@ module.exports = {
     };
   },
   assetPrefix: production ? `${hostUrl}` : '',
-  publicRuntimeConfig: {
+  env: {
     linkPrefix: production ? `${hostUrl}` : ''
   }
   // webpack: config => {
