@@ -9,17 +9,12 @@
     "deploy": "npm run export && type nul > out/.nojekyll && gh-pages -d out",
     "start": "next start"
   },
-  "prettier": {
-    "singleQuote": true
-  },
   "dependencies": {
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "next": "9.1.2",
-    "styled-jsx": "^3.2.3"
-  },
-  "devDependencies": {
     "gh-pages": "^2.1.1",
     "prettier": "^1.18.2"
-  }
+  },
+  "devDependencies": {}
 }

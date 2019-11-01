@@ -19,14 +19,23 @@ module.exports = {
       '/show/33618': { page: '/show/33618' }
     };
   },
+  // target: 'serverless',
   assetPrefix: production ? `${hostUrl}` : '',
   env: {
     linkPrefix: production ? `${hostUrl}` : ''
   }
-  // webpack: config => {
+  // webpack: (config, { defaultLoaders }) => {
   //   config.module.rules.push({
-  //     test: /\.md$/,
-  //     use: 'raw-loader'
+  //     test: /\.css$/,
+  //     use: [
+  //       defaultLoaders.babel,
+  //       {
+  //         loader: require('styled-jsx/webpack').loader,
+  //         options: {
+  //           type: 'scoped'
+  //         }
+  //       }
+  //     ]
   //   });
   //
   //   return config;
