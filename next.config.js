@@ -21,9 +21,9 @@ module.exports = {
   },
   // target: 'serverless',
   assetPrefix: production ? `${hostUrl}` : '',
-  env: {
-    linkPrefix: production ? `${hostUrl}` : ''
-  }
+  // env: {
+  //   linkPrefix: production ? `${hostUrl}` : ''
+  // }
   // webpack: (config, { defaultLoaders }) => {
   //   config.module.rules.push({
   //     test: /\.css$/,
@@ -36,6 +36,15 @@ module.exports = {
   //         }
   //       }
   //     ]
+  //   });
+  //
+  //   return config;
+  // }
+  //
+  // webpack: config => {
+  //   config.module.rules.push({
+  //     test: /\.md$/,
+  //     use: 'raw-loader'
   //   });
   //
   //   return config;

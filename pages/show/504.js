@@ -1,5 +1,5 @@
-import WrapLayout from '../../components/WrapLayout';
-import React from 'react';
+import WrapLayout from '../../components/WrapLayout'
+import React from 'react'
 
 const Post504 = () => (
   <WrapLayout>
@@ -21,6 +21,6 @@ const Post504 = () => (
       src="http://static.tvmaze.com/uploads/images/medium_portrait/4/10842.jpg"
     />
   </WrapLayout>
-);
+)
 
-export default Post504;
+export default Post504

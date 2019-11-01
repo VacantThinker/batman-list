@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "rmdir /q /s .next && next build && next export ",
-    "deploy": "npm run export && type nul > out/.nojekyll && gh-pages -d out",
+    "deploy": "npm run export && type nul > out/.nojekyll && gh-pages -t -d out",
     "start": "next start"
   },
   "dependencies": {

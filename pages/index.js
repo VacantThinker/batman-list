@@ -1,6 +1,6 @@
-import React from 'react';
-import WrapLayout from '../components/WrapLayout';
-import PrefixedLink from '../components/PrefixedLink';
+import React from 'react'
+import WrapLayout from '../components/WrapLayout'
+import PrefixedLink from '../components/PrefixedLink'
 
 const Index = () => {
   return (
@@ -59,7 +59,7 @@ const Index = () => {
         </li>
       </ul>
     </WrapLayout>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

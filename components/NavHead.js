@@ -1,9 +1,9 @@
-import React from 'react';
-import PrefixedLink from './PrefixedLink';
+import React from 'react'
+import PrefixedLink from './PrefixedLink'
 
 const aStyle = {
   marginRight: 10
-};
+}
 
 const NavHead = () => {
   return (
@@ -15,14 +15,20 @@ const NavHead = () => {
         <a style={aStyle}>about</a>
       </PrefixedLink>
     </div>
-  );
-};
+  )
+}
 
-export default NavHead;
+export default NavHead
 
-{/*<style jsx>{`*/}
-{/*        a {*/}
-{/*          margin-left: 5px;*/}
-{/*          margin-right: 10px;*/}
-{/*        }*/}
-{/*      `}</style>*/}
+{/*<style jsx>{`*/
+}
+{/*        a {*/
+}
+{/*          margin-left: 5px;*/
+}
+{/*          margin-right: 10px;*/
+}
+{/*        }*/
+}
+{/*      `}</style>*/
+}

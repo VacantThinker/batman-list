@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from 'next/link'
+import React from 'react'
 // import getConfig from "next/config";
 //
 // const { publicRuntimeConfig } = getConfig();
@@ -15,6 +15,6 @@ const PrefixedLink = ({ href, as = href, children }) => (
   <Link href={href} as={`${process.env.linkPrefix}${as}`}>
     {children}
   </Link>
-);
+)
 
-export default PrefixedLink;
+export default PrefixedLink

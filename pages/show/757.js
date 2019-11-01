@@ -1,5 +1,5 @@
-import WrapLayout from '../../components/WrapLayout';
-import React from 'react';
+import WrapLayout from '../../components/WrapLayout'
+import React from 'react'
 
 const Post757 = () => (
   <WrapLayout>
@@ -19,6 +19,6 @@ const Post757 = () => (
       src="http://static.tvmaze.com/uploads/images/medium_portrait/80/202273.jpg"
     />
   </WrapLayout>
-);
+)
 
-export default Post757;
+export default Post757
