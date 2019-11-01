@@ -1,6 +1,4 @@
-const production = process.env.NODE_ENV === 'production';
-// const hostUrl = '/batman-list';
-const hostUrl = '';
+const { backend_url } = require('./env.config')
 
 module.exports = {
   exportPathMap: function() {
@@ -20,9 +18,9 @@ module.exports = {
     };
   },
   // target: 'serverless',
-  assetPrefix: production ? `${hostUrl}` : '',
+  assetPrefix: backend_url
   // env: {
-  //   linkPrefix: production ? `${hostUrl}` : ''
+  //   linkPrefix: production ? `${backend_url}` : ''
   // }
   // webpack: (config, { defaultLoaders }) => {
   //   config.module.rules.push({

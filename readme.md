@@ -43,7 +43,7 @@
 
 .babelrc.js
 ```javascript
-const env = require('./env-config')
+const env = require('./env.config')
 
 module.exports = {
   "presets": [
@@ -67,15 +67,18 @@ module.exports = {
 
 ```
 
-env-config.js
+env.config.js
 ```javascript
 const isProduction = process.env.NODE_ENV === 'production';
-// const host = '/batman-list';
-const host = '';
+const hostUrl = '/batman-list';
+const backend_url = isProduction ? hostUrl: '';
+// const backend_url = '';
 
 module.exports = {
-  'process.env.linkPrefix': isProduction ? host: ''
+  'process.env.linkPrefix': backend_url,
+  backend_url
 }
+
 
 ```
 
