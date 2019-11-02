@@ -130,4 +130,35 @@ export default PrefixedImg
  - https://reactjs.org/docs/lists-and-keys.html#keys
 
 ---
+
+ - export default XXXName, 组件
+    
+    - 不允许重名
+
+--- 
+
+ - 根据模板组件, 生成静态组件
+    
+    - a 缓存所有数据
+    - b 根据xxx.map(value=>{}), 查找所有路线图
+    - c 根据路线图, 对应模板组件, 一键生成模板对应的静态页面
+    - d 更新next.config.js
+
+---
+
+ - 诡异next export
+    
+    - 两个项目
+    - batman-list
+        - show/481 show/900
+        - 利用模板+循环, 制造所有的纯静态页面, 
+        - githubpage xxx/batman-list 访问完全没问题, 
+        - 单页面, 也可单个链接刷新访问
+    - batman-list-await
+        - show/[id]
+        - 利用模板+循环, 不制造纯静态页面, 使用模板本身+查询数据, 
+        - githubpage xxx/batman-list-await 访问有问题, 提示as href 不兼容问题,
+        - 单页面访问没问题
+
+---
 end

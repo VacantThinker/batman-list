@@ -5,7 +5,9 @@ module.exports = {
     [
       'next/babel',
       {
-        'preset-env': {}
+        'preset-env': {
+          modules: 'commonjs'
+        }
       }
     ]
   ],

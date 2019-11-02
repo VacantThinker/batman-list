@@ -1,6 +1,7 @@
 const { backend_url } = require('./env.config')
 
 module.exports = {
+  assetPrefix: backend_url,
   exportPathMap: function() {
     const paths = {
       '/': { page: '/' },
@@ -20,19 +21,17 @@ module.exports = {
       { id: 33618, name: 'The Adventures of Batman' }
     ]
     const dirName = '/show/'
-    const p_id = '[id]'
+    //    const p_id = '[id]'
 
     shows.map(show => {
-      // '/show/33618': { page: '/show/33618' }
       const id = show.id
-      const pageUrl = `${dirName}${id}`
-      paths[pageUrl] = { page: pageUrl }
+      const path_ = `${dirName}${id}`
+      paths[path_] = { page: path_ }
     })
 
     return paths
-  },
+  }
   // target: 'serverless',
-  assetPrefix: backend_url
   // env: {
   //   linkPrefix: production ? `${backend_url}` : ''
   // }

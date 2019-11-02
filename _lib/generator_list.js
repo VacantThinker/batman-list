@@ -124,38 +124,61 @@ function g_indexjs_ul_li_data() {
 
 function g_showdir_post_data() {
 
-  const showArr = []
   shows.map((show, index) => {
-    const id = show.id
-    const name = `\`${show.name}\``
-    const summary = `\`${show.summary}\``
-    showArr[index] = {
-      id: id,
-      name: name,
-      summary: summary
-    }
+      const id = show.id
+      const name = `${show.name}`
+      const summary = `${show.summary}`
 
-    const templatePost = `
-import Post from './Post'
+      const templatePost = `
+import WrapLayout from '../../components/WrapLayout'
+import PrefixedImg from '../../components/PrefixedImg'
 import React from 'react'
-  const Post${id} = () => {
-  const show = {
-    id: ${id},
-    name: ${name},
-    summary: ${summary}
-  }
-  return <Post {...show} />
+
+const Post${id} = props => {
+//  const { id, name, summary } = props
+
+  return (
+    <WrapLayout>
+      <h1>${name}</h1>
+      <p>${summary}</p>
+      <PrefixedImg alt="" src={\`/static/${id}.jpg\`} />
+    </WrapLayout>
+  )
 }
 
 export default Post${id}
     `
-    const filePath = path.join(__dirname, `../pages/show/${id}.js`)
-    fs.writeFileSync(filePath, templatePost, 'utf8')
+      const filePath = path.join(__dirname, `../pages/show/${id}.js`)
+      fs.writeFileSync(filePath, templatePost, 'utf8')
 
-  })
-
-  const f = path.join(__dirname, `../_temp/showdir_post_data.json`)
-  fs.writeFileSync(f, JSON.stringify(showArr), 'utf8')
+    }
+  )
 }
 
 g_showdir_post_data()
+
+function g_showdir_post_data_map() {
+
+  const showArr = new Map()
+  shows.map((show, index) => {
+      const id = show.id
+      const name = `\`${show.name}\``
+      const summary = `\`${show.summary}\``
+
+      const showItem = {
+        id: id,
+        name: name,
+        summary: summary
+      }
+      showArr.set(`${show.id}`, showItem)
+
+    }
+  )
+  console.log(showArr)
+
+  const f = path.join(__dirname, `../_temp/showdir_post_data.json`)
+  fs.writeFileSync(f, JSON.stringify([...showArr]), 'utf8')
+}
+
+// g_showdir_post_data_map()
+
