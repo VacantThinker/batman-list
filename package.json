@@ -1,12 +1,12 @@
 {
   "name": "batman-list",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "rmdir /q /s .next && next build && next export ",
-    "deploy": "npm run export && type nul > out/.nojekyll && gh-pages -t -d out",
+    "export": "rmdir /q /s .next && next build && next export && type nul > out/.nojekyll ",
+    "deploy": "npm run export && gh-pages -t -d out",
     "start": "next build && next start"
   },
   "dependencies": {

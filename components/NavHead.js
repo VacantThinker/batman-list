@@ -6,14 +6,17 @@ const aStyle = {
 }
 
 const NavHead = () => {
+  const linkDataArr = [
+    { linkUrl: '/', linkName: 'home' },
+    { linkUrl: '/about', linkName: 'about' }
+  ]
   return (
     <div>
-      <PrefixedLink href="/">
-        <a style={aStyle}>Home</a>
-      </PrefixedLink>
-      <PrefixedLink href="/about">
-        <a style={aStyle}>about</a>
-      </PrefixedLink>
+      {linkDataArr.map(data => (
+        <PrefixedLink key={data.linkName} href={data.linkUrl}>
+          <a style={aStyle}>{data.linkName}</a>
+        </PrefixedLink>
+      ))}
     </div>
   )
 }

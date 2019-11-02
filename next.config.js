@@ -2,20 +2,34 @@ const { backend_url } = require('./env.config')
 
 module.exports = {
   exportPathMap: function() {
-    return {
+    const paths = {
       '/': { page: '/' },
-      '/about': { page: '/about' },
-      '/show/975': { page: '/show/975' },
-      '/show/481': { page: '/show/481' },
-      '/show/504': { page: '/show/504' },
-      '/show/757': { page: '/show/757' },
-      '/show/3557': { page: '/show/3557' },
-      '/show/11464': { page: '/show/11464' },
-      '/show/900': { page: '/show/900' },
-      '/show/22309': { page: '/show/22309' },
-      '/show/5951': { page: '/show/5951' },
-      '/show/33618': { page: '/show/33618' }
-    };
+      '/about': { page: '/about' }
+    }
+
+    const shows = [
+      { id: 975, name: 'Batman' },
+      { id: 481, name: 'The Batman' },
+      { id: 504, name: 'Batman Beyond' },
+      { id: 757, name: 'Batman: The Animated Series' },
+      { id: 3557, name: 'Beware the Batman' },
+      { id: 11464, name: 'Batman Unlimited' },
+      { id: 900, name: 'Batman: The Brave and the Bold' },
+      { id: 22309, name: 'Batman: Black and White' },
+      { id: 5951, name: 'The New Batman Adventures' },
+      { id: 33618, name: 'The Adventures of Batman' }
+    ]
+    const dirName = '/show/'
+    const p_id = '[id]'
+
+    shows.map(show => {
+      // '/show/33618': { page: '/show/33618' }
+      const id = show.id
+      const pageUrl = `${dirName}${id}`
+      paths[pageUrl] = { page: pageUrl }
+    })
+
+    return paths
   },
   // target: 'serverless',
   assetPrefix: backend_url
@@ -47,7 +61,7 @@ module.exports = {
   //
   //   return config;
   // }
-};
+}
 
 // module.exports = {
 //   exportsPathMap: function () {

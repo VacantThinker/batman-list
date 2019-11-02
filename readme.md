@@ -117,4 +117,17 @@ export default PrefixedImg
 ```
 
 ---
+
+ - 编码时, 强烈建议
+    
+    - 使用id, 而不是 xxx.id
+    
+        - 方便修改代码
+        - 接受数据
+
+---
+
+ - https://reactjs.org/docs/lists-and-keys.html#keys
+
+---
 end

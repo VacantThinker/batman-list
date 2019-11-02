@@ -2,10 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const axios = require('axios').default
 
-const production = process.env.NODE_ENV === 'production'
-const hostUrl = '/batman-list'
-// const hostUrl = '';
-
 const filePath = path.join(__dirname, '../_data/batman.json')
 const fileSync = fs.readFileSync(filePath, 'utf8')
 const jsonObj = JSON.parse(fileSync)
@@ -105,7 +101,61 @@ function g_showdir_idjs_image() {
   })
 }
 
-g_indexjs_ul_li()
+// g_indexjs_ul_li()
 // g_nextconfigjs_pathmap_showid()
 // g_showdir_idjs()
 // g_showdir_idjs_image()
+
+function g_indexjs_ul_li_data() {
+  const showDataArr = []
+
+  shows.map((show, index) => {
+    showDataArr[index] = {
+      id: show.id,
+      name: show.name
+    }
+  })
+  console.log(showDataArr)
+  fs.writeFileSync(path.join(__dirname, '../_temp/indexjs_ul_li_data'),
+    JSON.stringify(showDataArr), 'utf8')
+}
+
+// g_indexjs_ul_li_data()
+
+function g_showdir_post_data() {
+
+  const showArr = []
+  shows.map((show, index) => {
+    const id = show.id
+    const name = `\`${show.name}\``
+    const summary = `\`${show.summary}\``
+    showArr[index] = {
+      id: id,
+      name: name,
+      summary: summary
+    }
+
+    const templatePost = `
+import Post from './Post'
+import React from 'react'
+  const Post${id} = () => {
+  const show = {
+    id: ${id},
+    name: ${name},
+    summary: ${summary}
+  }
+  return <Post {...show} />
+}
+
+export default Post${id}
+    `
+    const filePath = path.join(__dirname, `../pages/show/${id}.js`)
+    fs.writeFileSync(filePath, templatePost, 'utf8')
+
+  })
+
+  const f = path.join(__dirname, `../_temp/showdir_post_data.json`)
+  fs.writeFileSync(f, JSON.stringify(showArr), 'utf8')
+}
+
+g_showdir_post_data()
