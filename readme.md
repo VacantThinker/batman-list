@@ -5,7 +5,7 @@
     
     - https://vacantthinker.github.io/batman-list/
         - host '/batman-list'
-    - https://batman-list.littlehappyforsmile.now.sh/
+    - https://batman-list-tidy-humor.now.sh/
         - host ''
 
 ---
