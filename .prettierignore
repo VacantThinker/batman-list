@@ -2,6 +2,7 @@
 **/.next
 **/out
 **/yarn.lock
+**/package-lock.json
 **/_data
 **/_lib
 **/_temp

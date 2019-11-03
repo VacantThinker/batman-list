@@ -40,6 +40,8 @@
     - 需要linkPrefix, 即前置链接
     
     - 使用babel插件, 设置一个前置链接, linkPrefix
+    
+    - 使用.babelrc会提示一个错误, 使用.babelrc.js 就没有这个问题, 见鬼了
 
 .babelrc.js
 ```javascript
@@ -123,11 +125,13 @@ export default PrefixedImg
     - 使用id, 而不是 xxx.id
     
         - 方便修改代码
-        - 接受数据
+        - 接收数据
 
 ---
 
  - https://reactjs.org/docs/lists-and-keys.html#keys
+    
+    - 每一个循环生成的组件, 都需要一个key属性
 
 ---
 
@@ -139,7 +143,7 @@ export default PrefixedImg
 
  - 根据模板组件, 生成静态组件
     
-    - a 缓存所有数据
+    - a 缓存所有数据, http 字符串 图片 文件
     - b 根据xxx.map(value=>{}), 查找所有路线图
     - c 根据路线图, 对应模板组件, 一键生成模板对应的静态页面
     - d 更新next.config.js
@@ -159,6 +163,30 @@ export default PrefixedImg
         - 利用模板+循环, 不制造纯静态页面, 使用模板本身+查询数据, 
         - githubpage xxx/batman-list-await 访问有问题, 提示as href 不兼容问题,
         - 单页面访问没问题
+
+---
+
+ - 关于varName {} `` $ 的使用
+``` 
+    - 元素文本节点 textNode, {varName}
+    - 元素属性值 attributeValue, key={`${varName}`}
+        
+```
+    
+```javascript
+        {shows.map(show => {
+          const id = show.id
+          const name = show.name
+          return (
+            <li key={`${id}`}>
+              <PrefixedLink href={`${dirName}${id}`} as={`${dirName}${id}`}>
+                <a>{name}</a>
+              </PrefixedLink>
+            </li>
+          )
+        })}
+
+```
 
 ---
 end

@@ -3,9 +3,10 @@
   "version": "0.1.4",
   "private": true,
   "scripts": {
+    "clean .next": "rmdir /q /s .next ",
     "dev": "next dev",
     "build": "next build",
-    "export": "rmdir /q /s .next && next build && next export && type nul > out/.nojekyll ",
+    "export": "next build && next export && type nul > out/.nojekyll ",
     "deploy": "npm run export && gh-pages -t -d out",
     "start": "next build && next start"
   },
@@ -17,6 +18,8 @@
   "devDependencies": {
     "axios": "^0.19.0",
     "gh-pages": "^2.1.1",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }

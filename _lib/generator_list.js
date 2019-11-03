@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+// const rimrf = require('')
 const axios = require('axios').default
 
 const filePath = path.join(__dirname, '../_data/batman.json')
@@ -9,14 +10,39 @@ const jsonObj = JSON.parse(fileSync)
 const shows = jsonObj.map(x => x.show)
 
 function g_indexjs_ul_li() {
+  // const tem = `
+// {shows.map(show => {
+//   const id = show.id
+//   const name = show.name
+//   return (
+//     <li key={\`${id}\`}>
+//       <PrefixedLink href={\`${dirName}${id}\`} as={\`${dirName}${id}\`}>
+//         <a>{\`${name}\`}</a>
+//       </PrefixedLink>
+//     </li>
+//   )
+// })}
+// `
+
   let strToFile = ''
-  shows.forEach(val => {
+  shows.forEach(show => {
     const dirName = '/show/'
-    const templateLi = `<li key={\`${val.id}\`}>
-  <PrefixedLink href={\`${dirName}${val.id}\`}>
-    <a>${val.name}</a>
-  </PrefixedLink>
-</li>
+    const id = show.id
+    const dirNameAndId = `${dirName}${id}`
+    const name = show.name
+    // return (
+    //   <li key={id}>
+    //     <PrefixedLink href={dirNameAndId} as={dirNameAndId}>
+    //       <a>{name}</a>
+    //     </PrefixedLink>
+    //   </li>
+    // )
+
+    const templateLi = `            <li key={\`${id}\`}>
+              <PrefixedLink href={\`${dirName}${id}\`} as={\`${dirName}${id}\`}>
+                <a>${name}</a>
+              </PrefixedLink>
+            </li>
 `
     // console.log(templateLi)
     strToFile = strToFile + templateLi
@@ -28,6 +54,8 @@ function g_indexjs_ul_li() {
     'utf8'
   )
 }
+
+// g_indexjs_ul_li()
 
 function g_nextconfigjs_pathmap_showid() {
   let strToFile = ''
@@ -101,7 +129,6 @@ function g_showdir_idjs_image() {
   })
 }
 
-// g_indexjs_ul_li()
 // g_nextconfigjs_pathmap_showid()
 // g_showdir_idjs()
 // g_showdir_idjs_image()
@@ -122,12 +149,35 @@ function g_indexjs_ul_li_data() {
 
 // g_indexjs_ul_li_data()
 
+const deleteFolderRecursive = function(pathLLL) {
+  if (fs.existsSync(pathLLL)) {
+    fs.readdirSync(pathLLL).forEach((file, index) => {
+      // pathLLL.join
+      const curPath = pathLLL + '/' + file
+      if (fs.lstatSync(curPath).isDirectory()) { // recurse
+        deleteFolderRecursive(curPath)
+      } else { // delete file
+        fs.unlinkSync(curPath)
+      }
+    })
+    fs.rmdirSync(pathLLL)
+  }
+}
+
 function g_showdir_post_data() {
+
+  const fileParentPath = path.join(__dirname, '../_temp/show/')
+  if (fs.existsSync(fileParentPath)) {
+    // fs.rmdirSync(fileParentPath)
+    deleteFolderRecursive(fileParentPath)
+  }
+  fs.mkdirSync(fileParentPath)
+
 
   shows.map((show, index) => {
       const id = show.id
-      const name = `${show.name}`
-      const summary = `${show.summary}`
+    const name = show.name
+    const summary = show.summary
 
       const templatePost = `
 import WrapLayout from '../../components/WrapLayout'
@@ -140,7 +190,7 @@ const Post${id} = props => {
   return (
     <WrapLayout>
       <h1>${name}</h1>
-      <p>${summary}</p>
+      <div>${summary}</div>
       <PrefixedImg alt="" src={\`/static/${id}.jpg\`} />
     </WrapLayout>
   )
@@ -148,11 +198,14 @@ const Post${id} = props => {
 
 export default Post${id}
     `
-      const filePath = path.join(__dirname, `../pages/show/${id}.js`)
-      fs.writeFileSync(filePath, templatePost, 'utf8')
+
+    const fileItemPath = path.join(__dirname, `../_temp/show/${id}.js`)
+    console.log(fileItemPath)
+    fs.writeFileSync(fileItemPath, templatePost, 'utf8')
 
     }
   )
+  console.log('end method ........ ')
 }
 
 g_showdir_post_data()
