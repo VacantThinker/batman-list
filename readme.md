@@ -188,5 +188,12 @@ export default PrefixedImg
 
 ```
 
+ - npm-package gh-pages
+    
+    - 推送指定文件夹到github仓库 gh-pages分支
+    - 手动删除github仓库, gh-pages分支
+        - 再次推送, 失败
+        - 原因, 本地已有gh-pages分支, 删除后即可再次推送
+
 ---
 end
