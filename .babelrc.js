@@ -6,7 +6,6 @@ module.exports = {
       'next/babel',
       {
         'preset-env': {
-          modules: 'commonjs'
         }
       }
     ]

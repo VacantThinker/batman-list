@@ -1,8 +1,4 @@
 const { backend_url } = require('./env.config')
-// const withBundleAnalyzer = require('@next/bundle-analyzer')
-// withBundleAnalyzer({
-//   enabled: process.env.ANALYZE === 'true'
-// })
 
 module.exports = ({
   assetPrefix: backend_url,
