@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export && type nul > out/.nojekyll ",
-    "deploy": "yarn run export && gh-pages -t -d out",
+    "deploy": "npm run export && gh-pages -t -d out",
     "start": "next build && next start"
   },
   "dependencies": {

@@ -8,6 +8,11 @@
     - https://batman-list-tidy-humor.now.sh/
         - host ''
 
+ - 部署至netlify
+    
+    - 不支持yarn, 即必须包含package-lock.json文件
+    - 如果当前项目是yarn安装的, 建议删除yarn-lock.json和node_modules, 然后使用npm install 重新安装. 然后重新部署
+
 ---
 
  - PrefixedLink 组件实现来自于
@@ -194,6 +199,8 @@ export default PrefixedImg
     - 手动删除github仓库, gh-pages分支
         - 再次推送, 失败
         - 原因, 本地已有gh-pages分支, 删除后即可再次推送
+
+---
 
 ---
 end
