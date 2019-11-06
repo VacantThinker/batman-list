@@ -1,6 +1,10 @@
 const { backend_url } = require('./env.config')
+// const withBundleAnalyzer = require('@next/bundle-analyzer')
+// withBundleAnalyzer({
+//   enabled: process.env.ANALYZE === 'true'
+// })
 
-module.exports = {
+module.exports = ({
   assetPrefix: backend_url,
   exportPathMap: function() {
     const paths = {
@@ -31,36 +35,38 @@ module.exports = {
 
     return paths
   }
-  // target: 'serverless',
-  // env: {
-  //   linkPrefix: production ? `${backend_url}` : ''
-  // }
-  // webpack: (config, { defaultLoaders }) => {
-  //   config.module.rules.push({
-  //     test: /\.css$/,
-  //     use: [
-  //       defaultLoaders.babel,
-  //       {
-  //         loader: require('styled-jsx/webpack').loader,
-  //         options: {
-  //           type: 'scoped'
-  //         }
-  //       }
-  //     ]
-  //   });
-  //
-  //   return config;
-  // }
-  //
-  // webpack: config => {
-  //   config.module.rules.push({
-  //     test: /\.md$/,
-  //     use: 'raw-loader'
-  //   });
-  //
-  //   return config;
-  // }
-}
+})
+
+// target: 'serverless',
+// env: {
+//   linkPrefix: production ? `${backend_url}` : ''
+// }
+// webpack: (config, { defaultLoaders }) => {
+//   config.module.rules.push({
+//     test: /\.css$/,
+//     use: [
+//       defaultLoaders.babel,
+//       {
+//         loader: require('styled-jsx/webpack').loader,
+//         options: {
+//           type: 'scoped'
+//         }
+//       }
+//     ]
+//   });
+//
+//   return config;
+// }
+//
+// webpack: config => {
+//   config.module.rules.push({
+//     test: /\.md$/,
+//     use: 'raw-loader'
+//   });
+//
+//   return config;
+// }
+
 
 // module.exports = {
 //   exportsPathMap: function () {

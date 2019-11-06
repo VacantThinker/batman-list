@@ -208,7 +208,7 @@ export default Post${id}
   console.log('end method ........ ')
 }
 
-g_showdir_post_data()
+// g_showdir_post_data()
 
 function g_showdir_post_data_map() {
 

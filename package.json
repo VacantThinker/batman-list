@@ -11,6 +11,7 @@
     "start": "next build && next start"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^9.1.2",
     "next": "9.1.2",
     "react": "16.11.0",
     "react-dom": "16.11.0"
