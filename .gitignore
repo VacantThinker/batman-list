@@ -10,7 +10,7 @@
 /.next/
 
 # next export
-/out/
+#/out/
 
 # other's
 _temp/*
