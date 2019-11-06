@@ -1,4 +1,4 @@
-const { backend_url } = require('./env.config')
+const { backend_url } = require('./env-config')
 
 module.exports = ({
   assetPrefix: backend_url,

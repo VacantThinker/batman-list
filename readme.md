@@ -50,7 +50,7 @@
 
 .babelrc.js
 ```javascript
-const env = require('./env.config')
+const env = require('./env-config')
 
 module.exports = {
   "presets": [
@@ -74,7 +74,7 @@ module.exports = {
 
 ```
 
-env.config.js
+env-config.js
 ```javascript
 const isProduction = process.env.NODE_ENV === 'production';
 const hostUrl = '/batman-list';
